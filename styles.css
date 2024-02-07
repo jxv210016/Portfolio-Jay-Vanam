@@ -380,6 +380,11 @@ article .icon {
   border-color: rgb(163, 163, 163);
 }
 
+/* Media */
+#media {
+  position: relative;
+}
+
 /* CONTACT */
 
 #contact {
