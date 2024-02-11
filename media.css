@@ -52,50 +52,54 @@ nav ul li a.active {
   color: #fff;
 }
 
+/* Section styles */
 section {
   text-align: center;
+  padding: 10px 0; /* Add less padding to sections */
 }
 
 h1 {
   margin-bottom: 20px;
 }
 
+/* Video container styles */
 .video-container {
   display: flex;
+  flex-direction: column; /* Stack elements vertically on smaller screens */
+  align-items: center; /* Center items horizontally */
 }
 
 iframe {
-  width: 50%;
-  float: left;
-  margin-right: 20px;
+  width: 100%; /* Make iframe fill the container */
+  max-width: 100%; /* Ensure iframe doesn't exceed its container */
+  margin-bottom: 20px; /* Add some space between iframe and video description */
 }
 
 .video-description {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding: 0 20px; /* Add less padding to the sides */
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.25rem; /* Adjust font size for smaller screens */
   margin-top: 0;
 }
 
 h4 {
-  margin-top: 0;
-}
-
-h5 {
   font-size: 1rem;
   margin-top: 10px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
+  .video-container {
+    flex-direction: row; /* Revert to horizontal layout for larger screens */
+    justify-content: center; /* Center items horizontally */
+    align-items: flex-start; /* Align items to the top */
+  }
+
   iframe {
-    width: 100%;
-    float: none;
-    margin-right: 0;
+    width: 50%; /* Set iframe width to half for larger screens */
+    max-width: 50%;
+    margin-right: 20px;
+    margin-bottom: 0; /* Reset margin */
   }
 }
