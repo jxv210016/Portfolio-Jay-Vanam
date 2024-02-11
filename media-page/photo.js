@@ -1,49 +1,42 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Get the modal element
   var modal = document.getElementById("modal");
-
-  // Get the modal image content
+  var body = document.body;
+  var images = document.querySelectorAll(
+    ".vertical-photo-container img, .horizontal-photo-container img"
+  );
   var modalImg = document.getElementById("modal-image");
-
-  // Get the close button
   var closeBtn = document.querySelector(".close");
 
-  // Get the images that open the modal
-  var images = document.querySelectorAll(".photo-container img");
+  function addModalOpenClass() {
+    body.classList.add("modal-open");
+    body.style.overflow = "hidden"; // Disable scrolling
+  }
 
-  // Loop through all images and add click event listeners
+  function removeModalOpenClass() {
+    body.classList.remove("modal-open");
+    body.style.overflow = ""; // Enable scrolling
+  }
+
   images.forEach(function (image) {
     image.addEventListener("click", function () {
-      modal.style.display = "block";
+      modal.style.display = "flex";
       modalImg.src = this.src;
+      addModalOpenClass();
     });
   });
 
-  // Close the modal when the user clicks on the close button
-  closeBtn.addEventListener("click", function () {
+  closeBtn.onclick = function () {
     modal.style.display = "none";
-  });
+    removeModalOpenClass();
+  };
 
-  // Close the modal when the user clicks outside of it
-  window.addEventListener("click", function (event) {
-    if (event.target === modal) {
+  window.onclick = function (event) {
+    if (event.target == modal) {
       modal.style.display = "none";
+      removeModalOpenClass();
     }
-  });
+  };
 
-  // Randomly reorder the photos
-  var photos = document.querySelectorAll(".photo");
-
-  function shuffle(array) {
-    for (var i = array.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-  }
-
-  var shuffledPhotos = shuffle(Array.from(photos));
-  shuffledPhotos.forEach(function (photo, index) {
-    photo.style.order = index;
-  });
+  // Ensure modal is hidden initially
+  modal.style.display = "none";
 });

@@ -1,5 +1,4 @@
 /* header styling */
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -9,10 +8,13 @@ body {
 header {
   text-align: center;
   padding: 20px 0;
+  transition: padding 0.3s ease;
 }
 
 header h1 {
   font-weight: bold;
+  margin: 0;
+  transition: font-size 0.3s ease;
 }
 
 nav {
@@ -37,7 +39,7 @@ nav ul li a {
   padding: 5px 10px;
   border: 1px solid #333;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 nav ul li a:hover {

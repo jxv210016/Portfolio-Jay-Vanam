@@ -324,7 +324,42 @@ section {
   color: rgb(85, 85, 85);
   font-weight: 600;
   font-size: 1.75rem;
-  margin-bottom: 2rem;
+}
+
+.work-container {
+  padding: 1.5rem;
+  flex: 1;
+  background: white;
+  border-radius: 2rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  text-align: center;
+}
+
+.work-company {
+  color: rgb(85, 85, 85);
+  font-weight: 600;
+  font-size: 1.75rem;
+}
+
+.work-position {
+  color: rgb(55, 55, 55);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.work-article-container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.work-article-container article {
+  font-size: 1rem; /* Set an appropriate font size */
+  line-height: 1.6;
+  max-width: 800px;
+  width: 100%;
+  text-align: left;
 }
 
 .experience-details-container {

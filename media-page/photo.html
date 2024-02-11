@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jay Vanam - Photos</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../styles.css" />
     <link rel="stylesheet" href="photo.css" />
   </head>
   <body>
@@ -15,13 +15,12 @@
           <li><a href="../media.html">Home</a></li>
           <li><a href="video.html">Video</a></li>
           <li><a href="photo.html" class="active">Photo</a></li>
-          <li><a href="../index.html">Back</a></li>
+          <li><a href="../index.html">Main Site</a></li>
         </ul>
       </nav>
     </header>
-
     <section>
-      <div class="photo-container">
+      <div class="vertical-photo-container">
         <img src="/photos/AMGSET.jpg" alt="AMGSET" />
         <!--<img src="/photos/BoredShoot.jpg" alt="BoredShoot" />-->
         <img src="/photos/city.jpg" alt="city" />
@@ -34,11 +33,17 @@
         <img src="/photos/Must.jpg" alt="Must" />
         <img src="/photos/OldMust.jpg" alt="OldMust" />
         <img src="/photos/RudraCLiff.jpg" alt="RudraCLiff" />
+      </div>
+      <div class="horizontal-photo-container">
         <img src="/photos/Spring.jpg" alt="Spring" />
         <img src="/photos/TrainCIty.jpg" alt="TrainCIty" />
         <img src="/photos/VITtrees.jpg" alt="VITtrees" />
       </div>
     </section>
+    <div id="modal" class="modal">
+      <span class="close">&times;</span>
+      <img id="modal-image" class="modal-content" />
+    </div>
+    <script src="photo.js"></script>
   </body>
-  <script src="photo.js"></script>
 </html>
