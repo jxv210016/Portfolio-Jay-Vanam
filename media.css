@@ -1,4 +1,4 @@
-/* header styling */
+/* Base styling */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -42,11 +42,7 @@ nav ul li a {
   transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-  background-color: #333;
-  color: #fff;
-}
-
+nav ul li a:hover,
 nav ul li a.active {
   background-color: #333;
   color: #fff;
@@ -55,7 +51,7 @@ nav ul li a.active {
 /* Section styles */
 section {
   text-align: center;
-  padding: 10px 0; /* Add less padding to sections */
+  padding: 10px 0;
 }
 
 h1 {
@@ -65,22 +61,21 @@ h1 {
 /* Video container styles */
 .video-container {
   display: flex;
-  flex-direction: column; /* Stack elements vertically on smaller screens */
-  align-items: center; /* Center items horizontally */
+  flex-direction: column;
+  align-items: center;
 }
 
 iframe {
-  width: 100%; /* Make iframe fill the container */
-  max-width: 100%; /* Ensure iframe doesn't exceed its container */
-  margin-bottom: 20px; /* Add some space between iframe and video description */
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .video-description {
-  padding: 0 20px; /* Add less padding to the sides */
+  padding: 0 20px;
 }
 
 h2 {
-  font-size: 1.25rem; /* Adjust font size for smaller screens */
+  font-size: 1.25rem;
   margin-top: 0;
 }
 
@@ -89,17 +84,33 @@ h4 {
   margin-top: 10px;
 }
 
+/* Responsive adjustments */
 @media screen and (min-width: 768px) {
   .video-container {
-    flex-direction: row; /* Revert to horizontal layout for larger screens */
-    justify-content: center; /* Center items horizontally */
-    align-items: flex-start; /* Align items to the top */
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
   }
 
   iframe {
-    width: 50%; /* Set iframe width to half for larger screens */
+    width: 50%;
     max-width: 50%;
     margin-right: 20px;
-    margin-bottom: 0; /* Reset margin */
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header h1,
+  nav ul li a {
+    font-size: smaller; /* Adjust font sizes for better readability on small screens */
+  }
+
+  .video-container {
+    flex-direction: column; /* Stack elements for mobile */
+  }
+
+  iframe {
+    width: 90%; /* Slightly reduce width for side margins */
   }
 }

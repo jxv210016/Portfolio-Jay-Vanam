@@ -1,4 +1,4 @@
-/* header styling */
+/* Base styling */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -41,43 +41,34 @@ nav ul li a {
   transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-  background-color: #333;
-  color: #fff;
-}
-
+nav ul li a:hover,
 nav ul li a.active {
   background-color: #333;
   color: #fff;
 }
 
-/* photo container styling */
-.vertical-photo-container {
+/* Photo container styling */
+.vertical-photo-container,
+.horizontal-photo-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 20px;
   padding: 20px;
 }
 
-.horizontal-photo-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  grid-gap: 20px;
-  padding: 20px;
-}
 .vertical-photo-container img,
 .horizontal-photo-container img {
-  width: 100%; /* Set the width of the images to fill their container */
-  height: auto; /* Maintain aspect ratio */
-  max-width: 100%; /* Ensure images don't exceed their container's width */
-  border-radius: 10px; /* Add border radius for rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-  transition: transform 0.3s ease; /* Add smooth transition effect */
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
 .vertical-photo-container img:hover,
 .horizontal-photo-container img:hover {
-  transform: scale(1.05); /* Add zoom effect on hover */
+  transform: scale(1.05);
 }
 
 /* Modal styles */
@@ -94,13 +85,11 @@ nav ul li a.active {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.3s ease;
 }
 
 .modal-content {
   max-width: 80%;
   max-height: 80%;
-  transition: transform 0.3s ease;
 }
 
 .close {
@@ -110,9 +99,25 @@ nav ul li a.active {
   right: 20px;
   font-size: 30px;
   cursor: pointer;
-  transition: transform 0.3s ease;
 }
 
 .close:hover {
   color: #ccc;
+}
+
+/* Adjustments for mobile screens */
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  nav ul li a {
+    font-size: 0.9rem;
+    padding: 5px 8px;
+  }
+
+  .vertical-photo-container,
+  .horizontal-photo-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
 }
