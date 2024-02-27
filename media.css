@@ -3,6 +3,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  line-height: 1.6; /* Enhance readability */
 }
 
 header {
@@ -25,6 +26,7 @@ nav {
 nav ul {
   list-style: none;
   padding: 0;
+  margin: 0; /* Adjust margin for mobile */
 }
 
 nav ul li {
@@ -36,10 +38,11 @@ nav ul li a {
   text-decoration: none;
   color: #333;
   font-weight: bold;
-  padding: 5px 10px;
+  padding: 10px 15px; /* Increase padding for larger touch targets */
   border: 1px solid #333;
   border-radius: 5px;
   transition: color 0.3s ease;
+  display: inline-block; /* Adjust display for proper padding */
 }
 
 nav ul li a:hover,
@@ -51,11 +54,22 @@ nav ul li a.active {
 /* Section styles */
 section {
   text-align: center;
-  padding: 10px 0;
+  padding: 20px 0; /* Increase padding for better spacing on mobile */
 }
 
-h1 {
+/* Headings */
+h1,
+h2,
+h4 {
   margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 1rem;
 }
 
 /* Video container styles */
@@ -63,28 +77,23 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%; /* Set container to full width */
 }
 
 iframe {
   width: 100%;
   margin-bottom: 20px;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
 }
 
 .video-description {
+  width: 100%; /* Set description to full width */
   padding: 0 20px;
 }
 
-h2 {
-  font-size: 1.25rem;
-  margin-top: 0;
-}
-
-h4 {
-  font-size: 1rem;
-  margin-top: 10px;
-}
-
-/* Responsive adjustments */
+/* Responsive adjustments for tablets and above */
 @media screen and (min-width: 768px) {
   .video-container {
     flex-direction: row;
@@ -94,16 +103,27 @@ h4 {
 
   iframe {
     width: 50%;
-    max-width: 50%;
+    max-width: 560px; /* Adjust to maintain aspect ratio */
     margin-right: 20px;
     margin-bottom: 0;
+    padding-bottom: 0;
+    height: 315px; /* Adjust height to maintain aspect ratio */
+  }
+
+  .video-description {
+    width: calc(50% - 40px); /* Adjust width accounting for padding and gap */
   }
 }
 
+/* Responsive adjustments for mobile */
 @media screen and (max-width: 768px) {
+  header {
+    padding: 10px 0; /* Reduced padding */
+  }
+
   header h1,
   nav ul li a {
-    font-size: smaller; /* Adjust font sizes for better readability on small screens */
+    font-size: 16px; /* Legible font size for mobile */
   }
 
   .video-container {
@@ -112,5 +132,11 @@ h4 {
 
   iframe {
     width: 90%; /* Slightly reduce width for side margins */
+  }
+
+  /* Adjustments for spacing and padding on mobile */
+  section,
+  .video-description {
+    padding: 0 15px; /* Add padding to avoid text touching the sides of the screen */
   }
 }
