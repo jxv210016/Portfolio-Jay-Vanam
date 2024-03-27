@@ -5,20 +5,27 @@ function toggleMenu() {
   icon.classList.toggle("open");
 }
 
-document.querySelector(".theme-toggle").addEventListener("click", function () {
-  document.body.classList.toggle("dark-theme");
+const toggleSwitch = document.querySelector("#darkmode-toggle");
+toggleSwitch.addEventListener("change", switchTheme, false);
 
-  // Optionally save the theme preference
-  if (document.body.classList.contains("dark-theme")) {
-    localStorage.setItem("theme", "dark");
+function switchTheme(e) {
+  if (e.target.checked) {
+    document.documentElement.setAttribute("data-theme", "dark");
+    localStorage.setItem("theme", "dark"); // Add this
   } else {
-    localStorage.setItem("theme", "light");
+    document.documentElement.setAttribute("data-theme", "light");
+    localStorage.setItem("theme", "light"); // Add this
   }
-});
+}
 
-// Automatically apply the theme based on saved preference
-window.onload = function () {
-  if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark-theme");
+// Check Local Storage for Theme
+const currentTheme = localStorage.getItem("theme")
+  ? localStorage.getItem("theme")
+  : null;
+if (currentTheme) {
+  document.documentElement.setAttribute("data-theme", currentTheme);
+
+  if (currentTheme === "dark") {
+    toggleSwitch.checked = true;
   }
-};
+}
