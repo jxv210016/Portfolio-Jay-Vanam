@@ -2,28 +2,13 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
-/* COLOR SCHEME VARIABLES */
-:root {
-  --navy-blue: #0a3f5e;
-  --crisp-white: #ffffff;
-  --off-white: #f5f5f5;
-  --soft-grey: #f4f4f4;
-  --accent-teal: #32afa9;
-  --sunset-orange: #f2a365;
-  --charcoal-grey: #aaaaaa;
-  --black: #000000;
-}
-
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: var(--black);
-  color: var(--charcoal-grey);
 }
 
 html {
@@ -31,7 +16,7 @@ html {
 }
 
 p {
-  color: var(--charcoal-grey);
+  color: rgb(85, 85, 85);
 }
 
 /* TRANSITION */
@@ -52,7 +37,6 @@ nav {
   justify-content: space-around;
   align-items: center;
   height: 17vh;
-  background-color: var(--black);
 }
 
 .nav-links {
@@ -62,19 +46,20 @@ nav {
 }
 
 a {
-  color: var(--off-white);
+  color: black;
   text-decoration: none;
+  text-decoration-color: white;
 }
 
 a:hover {
-  color: var(--accent-teal);
+  color: grey;
   text-decoration: underline;
   text-underline-offset: 1rem;
+  text-decoration-color: rgb(181, 181, 181);
 }
 
 .logo {
   font-size: 2rem;
-  color: var(--off-white);
 }
 
 .logo:hover {
@@ -104,7 +89,7 @@ a:hover {
 .hamburger-icon span {
   width: 100%;
   height: 2px;
-  background-color: var(--off-white);
+  background-color: black;
   transition: all 0.3 ease-in-out;
 }
 
@@ -112,7 +97,7 @@ a:hover {
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: var(--black);
+  background-color: white;
   width: fit-content;
   max-height: 0;
   overflow: hidden;
@@ -124,7 +109,7 @@ a:hover {
   padding: 10px;
   text-align: center;
   font-size: 1.5rem;
-  color: var(--off-white);
+  color: black;
   text-decoration: none;
   transition: all 0.3 ease-in-out;
 }
@@ -149,13 +134,26 @@ a:hover {
   transform: rotate(-45deg) translate(10px, -5px);
 }
 
+.hamburger-icon span:first-child {
+  transform: none;
+}
+
+.hamburger-icon span:first-child {
+  opacity: 1;
+}
+
+.hamburger-icon span:first-child {
+  transform: none;
+}
+
 /* SECTIONS */
 
 section {
   padding-top: 4vh;
   height: 96vh;
   margin: 0 10rem;
-  color: var(--black);
+  box-sizing: border-box;
+  min-height: fit-content;
 }
 
 .section-container {
@@ -169,7 +167,6 @@ section {
   justify-content: center;
   gap: 5rem;
   height: 80vh;
-  background-color: var(--black);
 }
 
 .section__pic-container {
@@ -200,7 +197,6 @@ section {
 .title {
   font-size: 3rem;
   text-align: center;
-  color: var(--off-white);
 }
 
 #socials-container {
@@ -231,32 +227,26 @@ section {
   padding: 1rem;
   width: 8rem;
   border-radius: 2rem;
-  border: 1px solid var(--accent-teal);
 }
 
-.btn-color-1 {
-  border: 1px solid var(--sunset-orange);
-  background: var(--sunset-orange);
-  color: var(--sunset-orange);
-}
-
+.btn-color-1,
 .btn-color-2 {
-  background: var(--accent-teal);
-  color: var(--accent-teal);
+  border: rgb(53, 53, 53) 0.1rem solid;
 }
+
 .btn-color-1:hover,
 .btn-color-2:hover {
   cursor: pointer;
 }
 
-.btn-color-1:hover {
-  background: var(--sunset-orange);
-  color: var(--crisp-white);
+.btn-color-1,
+.btn-color-2:hover {
+  background: rgb(53, 53, 53);
+  color: white;
 }
 
-.btn-color-2:hover {
-  background: var(--accent-teal);
-  color: var(--crisp-white);
+.btn-color-1:hover {
+  background: rgb(0, 0, 0);
 }
 
 .btn-color-2 {
@@ -264,15 +254,7 @@ section {
 }
 
 .btn-color-2:hover {
-  border: var(--accent-teal) 0.1rem solid;
-}
-
-.btn-color-1 {
-  background: none;
-}
-
-.btn-color-1:hover {
-  border: var(--sunset-orange) 0.1rem solid;
+  border: rgb(255, 255, 255) 0.1rem solid;
 }
 
 .btn-container {
@@ -283,7 +265,6 @@ section {
 
 #about {
   position: relative;
-  background-color: var(--black);
 }
 
 .about-containers {
@@ -315,11 +296,10 @@ section {
 .details-container {
   padding: 1.5rem;
   flex: 1;
-  background: var(--black);
+  background: white;
   border-radius: 2rem;
-  border: 1px solid var(--charcoal-grey);
-  border-color: var(--off-white);
-  color: var(--off-white);
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
   text-align: center;
 }
 
@@ -338,59 +318,85 @@ section {
 
 #experience {
   position: relative;
-  background-color: var(--black);
-  color: var(--off-white);
 }
 
 .experience-sub-title {
-  color: var(--off-white);
+  color: rgb(85, 85, 85);
   font-weight: 600;
   font-size: 1.75rem;
-  margin-bottom: 2rem;
+}
+
+.work-container {
+  padding: 1.5rem;
+  flex: 1;
+  background: white;
+  border-radius: 2rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  text-align: center;
+}
+
+.work-company {
+  color: rgb(85, 85, 85);
+  font-weight: 600;
+  font-size: 1.75rem;
+}
+
+.work-position {
+  color: rgb(55, 55, 55);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.work-article-container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.work-article-container article {
+  font-size: 1rem; /* Set an appropriate font size */
+  line-height: 1.6;
+  max-width: 800px;
+  width: 100%;
+  text-align: left;
 }
 
 .experience-details-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
 }
 
 .article-container {
   display: flex;
+  text-align: initial;
   flex-wrap: wrap;
+  flex-direction: row;
   gap: 2.5rem;
-  justify-content: center;
-  align-items: stretch;
+  justify-content: space-around;
 }
 
 article {
   display: flex;
-  width: 100%;
-  max-width: 10rem;
-  justify-content: start;
-  align-items: center;
+  width: 10rem;
+  justify-content: space-around;
   gap: 0.5rem;
-  text-align: left;
-  color: var(--charcoal-grey);
 }
 
 article .icon {
-  width: 1.5rem;
-  height: 1.5rem;
+  cursor: default;
 }
 
 /* PROJECTS SECTION */
 
 #projects {
   position: relative;
-  background-color: var(--black);
-  color: var(--off-white);
 }
 
 .color-container {
-  border-color: var(--off-white);
-  background: var(--black);
+  border-color: rgb(163, 163, 163);
+  background: rgb(250, 250, 250);
 }
 
 .project-img {
@@ -401,18 +407,17 @@ article .icon {
 
 .project-title {
   margin: 1rem;
-  color: var(--off-white);
+  color: black;
 }
 
 .project-btn {
-  color: var(--crisp-white);
-  background-color: var(--accent-teal);
-  border-color: var(--accent-teal);
+  color: black;
+  border-color: rgb(163, 163, 163);
 }
 
-.project-btn:hover {
-  background-color: var(--sunset-orange);
-  border-color: var(--sunset-orange);
+/* Media */
+#media {
+  position: relative;
 }
 
 /* CONTACT */
@@ -422,14 +427,15 @@ article .icon {
   justify-content: center;
   flex-direction: column;
   height: 70vh;
-  background-color: var(--black);
 }
 
 .contact-info-upper-container {
   display: flex;
   justify-content: center;
   border-radius: 2rem;
-  background: var(--off-white);
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  background: rgb(250, 250, 250);
   margin: 2rem auto;
   padding: 0.5rem;
 }
@@ -454,25 +460,66 @@ article .icon {
   height: 2.5rem;
 }
 
-.contact-info-container a {
-  color: var(--black);
-  text-decoration: none;
-}
-
-.contact-info-container a:hover {
-  color: var(--sunset-orange);
-  text-decoration: underline;
-}
-
 /* FOOTER SECTION */
-
 footer {
   height: 26vh;
   margin: 0 1rem;
-  background-color: var(--black);
 }
 
 footer p {
   text-align: center;
-  color: var(--off-white);
 }
+
+/* Add this at the bottom of your existing CSS */
+
+/* Dark Theme Styles */
+.dark-theme {
+  background-color: #121212; /* Dark background */
+  color: #ffffff; /* Light text */
+}
+
+.dark-theme a,
+.dark-theme .btn,
+.dark-theme .nav-links a,
+.dark-theme .contact-info-container p,
+.dark-theme .experience-sub-title,
+.dark-theme .work-company,
+.dark-theme .work-position,
+.dark-theme .project-title {
+  color: #ffffff; /* Light text for links and buttons */
+}
+
+.dark-theme nav,
+.dark-theme .menu-links,
+.dark-theme .details-container,
+.dark-theme .work-container,
+.dark-theme .contact-info-upper-container,
+.dark-theme .article-container article {
+  background-color: #242424; /* Darker elements background */
+  border-color: #444444; /* Dark borders for elements */
+}
+
+.dark-theme .btn-color-1,
+.dark-theme .btn-color-2 {
+  background: #333333; /* Dark buttons background */
+  color: #ffffff; /* Light text for buttons */
+}
+
+.dark-theme .btn-color-1:hover,
+.dark-theme .btn-color-2:hover {
+  background: #444444; /* Darker buttons on hover */
+}
+
+.dark-theme .hamburger-icon span {
+  background-color: #ffffff; /* Light hamburger icon */
+}
+
+.dark-theme .icon {
+  filter: invert(1); /* Invert icons for better visibility */
+}
+
+.dark-theme footer {
+  background-color: #1a1a1a; /* Dark footer background */
+}
+
+/* You may need to adjust more elements depending on your design */

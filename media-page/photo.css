@@ -46,63 +46,99 @@ nav ul li a.active {
   background-color: #333;
   color: #fff;
 }
-
-/* Photo container styling */
-.vertical-photo-container,
-.horizontal-photo-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-gap: 20px;
-  padding: 20px;
-}
-
-.vertical-photo-container img,
-.horizontal-photo-container img {
-  width: 100%;
-  height: auto;
+/* Swiper CSS */
+.swiper-container {
   max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  height: auto;
+  padding-top: 20px;
+  padding-bottom: 50px;
 }
 
-.vertical-photo-container img:hover,
-.horizontal-photo-container img:hover {
-  transform: scale(1.05);
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Additional centering for inline or text elements */
+  height: auto; /* Adjust based on your content, could be 100% or a specific value */
+  width: 100%;
+}
+.swiper-slide img {
+  max-width: 25%; /* Or adjust to keep the images smaller */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Fit the image within the container without cropping */
+  margin: auto; /* This can help center the image in some cases */
 }
 
-/* Modal styles */
+.swiper-wrapper {
+  align-items: center !important; /* Center slides vertically */
+}
+
+.swiper-slide {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* or specific size */
+  height: auto; /* or specific height */
+}
+
+.img-container img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #fff;
+}
+
+/* Modal CSS */
+.modal-content {
+  max-width: 100%; /* Limit image width to prevent overflow */
+  max-height: 80vh; /* Limit image height to the viewport height */
+  margin: auto; /* Center the image horizontally */
+  display: block; /* Ensure the image is block level for margin to work */
+}
+
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1050; /* Sit on top */
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.85);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-content {
-  max-width: 80%;
-  max-height: 80%;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
 }
 
 .close {
-  color: #fff;
   position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 30px;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
   cursor: pointer;
 }
 
-.close:hover {
-  color: #ccc;
+/* Body state when modal is open */
+body.modal-open {
+  overflow: hidden;
 }
 
 /* Adjustments for mobile screens */
