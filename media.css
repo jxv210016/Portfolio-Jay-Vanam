@@ -1,3 +1,46 @@
+body {
+  cursor: none; /* Hide the default cursor */
+}
+
+* {
+  cursor: none !important;
+}
+
+.custom-cursor {
+  position: fixed;
+  width: 25px; /* Adjust the size as needed */
+  height: 25px;
+  border-radius: 50%;
+  pointer-events: none; /* Prevent the cursor from interfering with clicks */
+  z-index: 9999;
+  overflow: hidden;
+  border: 2px solid rgba(0, 0, 0, 0.3); /* Optional: add a border for the bubble */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Optional: add a shadow for depth */
+  transition: transform 0.15s ease-out, opacity 0.3s ease;
+  opacity: 1;
+}
+
+.custom-cursor::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%; /* Adjust for magnification level */
+  height: 300%;
+  background: inherit; /* Inherit the background of the element beneath */
+  transform: scale(
+    0.33
+  ); /* Adjust for magnification level (inverse of background size) */
+  transform-origin: center center;
+}
+
+/* Animation for hovering over links */
+a:hover ~ .custom-cursor,
+.btn:hover ~ .custom-cursor {
+  transform: scale(2);
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
 /* Base styling */
 body {
   font-family: Arial, sans-serif;

@@ -7,8 +7,11 @@
     <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   </head>
   <body>
+    <div class="custom-cursor"></div>
+    <div id="particles-js"></div>
     <!-- ------------------desktop nav---------------------- -->
     <nav id="desktop-nav">
       <div class="logo">Jay Vanam</div>
@@ -47,8 +50,8 @@
       </div>
       <div class="section__text">
         <p class="section__text__p1">Hi, I'm</p>
-        <h1 class="title">Jay Vanam</h1>
-        <p class="section__text__p2">Frontend Developer</p>
+        <h1 class="title typing">Jay Vanam</h1>
+        <p class="section__text__p2">Developer</p>
         <div class="btn-container">
           <button
             class="btn btn-color-2"
@@ -75,6 +78,12 @@
           />
         </div>
       </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#about'"
+      />
     </section>
     <!-- ------------------about---------------------- -->
     <section id="about">
@@ -91,22 +100,14 @@
         <div class="about-details-container">
           <div class="about-containers">
             <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education Icon"
-                class="icon"
-              />
+              <img src="./assets/utdlogo.png" alt="UTD Logo" class="icon" />
               <h3>Education</h3>
-              <p>B.S Computer Science<br />May 2025</p>
+              <p>B.S Computer Science<br />May 2026</p>
             </div>
             <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Experience Icon"
-                class="icon"
-              />
+              <img src="./assets/Epsilon.png" alt="Epsilon Icon" class="icon" />
               <h3>Experience</h3>
-              <p>6 Months<br />Frontend Development</p>
+              <p>Software Engineering Intern<br />Summer</p>
             </div>
           </div>
           <div class="text-container">
@@ -131,57 +132,79 @@
     <section id="experience">
       <p class="section__text__p1">Explore My</p>
       <h1 class="title">Experience</h1>
-      <!--<div class="work-container">
-        <h2 class="work-company">Matilda Cloud</h2>
-        <h3 class="work-position">Software Engineering Intern</h3>
-        <div class="work-article-container">
-          <article>
-            <h5>
-              Achieved a 20% increase in user efficiency by collaborating with
-              an 8-member team to refine the Matilda Discover platform. Our
-              focus was on enhancing user functionality and operational
-              effectiveness through interface optimization.
-              <br />
-              Streamlined thecloud migration assessment by conducting quality
-              assessments on scripts encompassing 5000 lines of code. This
-              significantly improved the accuracy of cloud migration processes
-              and reduced migration errors.
-              <br />
-              Strengthened my backend development and contributed to a robust
-              application by committing over 1200 lines in Python using
-              APScheduler, SQLAlchemy, and REST API, which enhanced platform
-              functionality and reliability.
-            </h5>
-          </article>
-        </div>
-      </div>
-      <div class="work-container">
-        <h2 class="work-company">Slick Studios</h2>
-        <h3 class="work-position">Sound Engineer</h3>
-        <div class="work-article-container">
-          <article>
-            <h5>
-              Collaborated with the director and a crew of over 15 members to
-              align audio production with the director’s vision, contributing to
-              a 30% increase in editing efficiency and a cohesive sound for the
-              final production.
-              <br />
-              Elevated sound recording quality by strategically optimizing the
-              use of diverse audio equipment, including microphones,
-              soundboards, and speakers, resulting in superior sound quality and
-              balance.
-              <br />
-              Maintained consistent and clear audio by monitoring and adjusting
-              audio levels, effectively capturing dialogue and sound, which led
-              to a 25% reduction in post-production sound correction needs,
-              maintaining production quality.
-            </h5>
-          </article>
-        </div>
-      </div>
-    -->
       <div class="experience-details-container">
         <div class="about-containers">
+          <div class="details-container">
+            <h2 class="experience-sub-title">Backend Development</h2>
+            <div class="article-container">
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Python</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Java</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>C++</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Flask</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Django</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Git</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+            </div>
+          </div>
           <div class="details-container">
             <h2 class="experience-sub-title">Frontend Development</h2>
             <div class="article-container">
@@ -247,78 +270,7 @@
                   class="icon"
                 />
                 <div>
-                  <h3>Material UI</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-            </div>
-          </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">Backend Development</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Python</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Java</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>C++</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Flask</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Django</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Git</h3>
+                  <h3>TypeScript</h3>
                   <p>Basic</p>
                 </div>
               </article>

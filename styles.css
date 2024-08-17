@@ -11,6 +11,59 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+body {
+  cursor: none; /* Hide the default cursor */
+}
+
+* {
+  cursor: none !important;
+}
+
+.custom-cursor {
+  position: fixed;
+  width: 25px; /* Adjust the size as needed */
+  height: 25px;
+  border-radius: 50%;
+  pointer-events: none; /* Prevent the cursor from interfering with clicks */
+  z-index: 9999;
+  overflow: hidden;
+  border: 2px solid rgba(0, 0, 0, 0.3); /* Optional: add a border for the bubble */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Optional: add a shadow for depth */
+  transition: transform 0.15s ease-out, opacity 0.3s ease;
+  opacity: 1;
+}
+
+.custom-cursor::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%; /* Adjust for magnification level */
+  height: 300%;
+  background: inherit; /* Inherit the background of the element beneath */
+  transform: scale(
+    0.33
+  ); /* Adjust for magnification level (inverse of background size) */
+  transform-origin: center center;
+}
+
+/* Animation for hovering over links */
+a:hover ~ .custom-cursor,
+.btn:hover ~ .custom-cursor {
+  transform: scale(2);
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensure it's behind all other content */
+  top: 0;
+  left: 0;
+  background-color: #e0e0e0; /* You can change the background color if needed */
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -206,6 +259,53 @@ section {
   gap: 1rem;
 }
 
+.typing {
+  font-family: monospace;
+  font-size: 2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 4px solid; /* Creates the caret */
+  width: 10ch; /* Set the width based on the number of characters */
+  display: inline-block;
+  animation: typing 2s steps(10, end) forwards,
+    blink-caret 0.5s step-end infinite; /* Blinking caret */
+  position: relative;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 10ch;
+  } /* Ensure it matches the text width */
+}
+
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: black;
+  }
+}
+
+/* New keyframe to hide the caret after 4 seconds */
+@keyframes hide-caret {
+  from {
+    border-color: black;
+  }
+  to {
+    border-color: transparent;
+  }
+}
+
+/* Apply the hide-caret animation after typing is done */
+.typing.finished-typing {
+  animation: blink-caret 0.5s step-end infinite,
+    hide-caret 0s linear 4s forwards;
+}
+
 /* ICONS */
 
 .icon {
@@ -296,7 +396,6 @@ section {
 .details-container {
   padding: 1.5rem;
   flex: 1;
-  background: white;
   border-radius: 2rem;
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
@@ -329,7 +428,7 @@ section {
 .work-container {
   padding: 1.5rem;
   flex: 1;
-  background: white;
+
   border-radius: 2rem;
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
@@ -396,7 +495,6 @@ article .icon {
 
 .color-container {
   border-color: rgb(163, 163, 163);
-  background: rgb(250, 250, 250);
 }
 
 .project-img {
@@ -435,7 +533,6 @@ article .icon {
   border-radius: 2rem;
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
-  background: rgb(250, 250, 250);
   margin: 2rem auto;
   padding: 0.5rem;
 }
