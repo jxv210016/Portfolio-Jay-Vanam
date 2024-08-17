@@ -19,16 +19,17 @@ body {
   cursor: none !important;
 }
 
+/* General styles for the custom cursor */
 .custom-cursor {
   position: fixed;
-  width: 25px; /* Adjust the size as needed */
+  width: 25px;
   height: 25px;
   border-radius: 50%;
-  pointer-events: none; /* Prevent the cursor from interfering with clicks */
+  pointer-events: none;
   z-index: 9999;
   overflow: hidden;
-  border: 2px solid rgba(0, 0, 0, 0.3); /* Optional: add a border for the bubble */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Optional: add a shadow for depth */
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   transition: transform 0.15s ease-out, opacity 0.3s ease;
   opacity: 1;
 }
@@ -38,13 +39,22 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 300%; /* Adjust for magnification level */
+  width: 300%;
   height: 300%;
-  background: inherit; /* Inherit the background of the element beneath */
-  transform: scale(
-    0.33
-  ); /* Adjust for magnification level (inverse of background size) */
+  background: inherit;
+  transform: scale(0.33);
   transform-origin: center center;
+}
+
+/* Hide the custom cursor on mobile devices */
+@media only screen and (max-width: 768px) {
+  .custom-cursor {
+    display: none;
+  }
+
+  body {
+    cursor: auto !important; /* Reset the cursor to the default */
+  }
 }
 
 /* Animation for hovering over links */
