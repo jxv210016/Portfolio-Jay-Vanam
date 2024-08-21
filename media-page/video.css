@@ -1,3 +1,47 @@
+/* General styles for the custom cursor */
+.custom-cursor {
+  position: fixed;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.15s ease-out, opacity 0.3s ease;
+  opacity: 1;
+}
+
+.custom-cursor::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 300%;
+  background: inherit;
+  transform: scale(0.33);
+  transform-origin: center center;
+}
+
+/* Hide the custom cursor on mobile devices */
+@media only screen and (max-width: 768px) {
+  .custom-cursor {
+    display: none;
+  }
+
+  body {
+    cursor: auto !important; /* Reset the cursor to the default */
+  }
+}
+
+/* Animation for hovering over links */
+a:hover ~ .custom-cursor,
+.btn:hover ~ .custom-cursor {
+  transform: scale(2);
+  background-color: rgba(255, 255, 255, 0.7);
+}
 /* Base styling */
 body {
   font-family: Arial, sans-serif;
