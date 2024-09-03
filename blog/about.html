@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - Cooking Blog</title>
+    <link rel="stylesheet" href="blog.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="archives.html">Archives</a></li>
+          <li>
+            <a href="javascript:void(0);" onclick="toggleSearch()">Search</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="search-bar" id="searchBar" style="display: none">
+        <input type="text" placeholder="Search..." />
+      </div>
+    </header>
+
+    <main>
+      <section class="about">
+        <h1>About Me</h1>
+        <img src="../assets/about-pic.png" alt="About Me" class="about-image" />
+        <p>Hello! I'm [Your Name], a cooking enthusiast and food blogger...</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Cooking Blog. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

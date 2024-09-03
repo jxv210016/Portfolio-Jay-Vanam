@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post Title - Cooking Blog</title>
+    <link rel="stylesheet" href="blog.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="archives.html">Archives</a></li>
+          <li>
+            <a href="javascript:void(0);" onclick="toggleSearch()">Search</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="search-bar" id="searchBar" style="display: none">
+        <input type="text" placeholder="Search..." />
+      </div>
+    </header>
+
+    <main>
+      <article>
+        <h1>How to Make the Perfect Pasta</h1>
+        <p class="post-meta">
+          Posted on <time datetime="2024-09-02">September 2, 2024</time> |
+          Categories: <a href="#">Pasta</a>, <a href="#">Italian</a>
+        </p>
+        <img src="uploads/pasta.jpg" alt="Pasta" class="post-image" />
+        <p>Learn how to make the perfect pasta from scratch...</p>
+        <!-- Rest of the post content -->
+
+        <section class="comments">
+          <h2>Comments</h2>
+          <p>Leave a comment:</p>
+          <textarea placeholder="Your comment..."></textarea>
+          <button type="button">Submit</button>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Cooking Blog. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - Cooking Blog</title>
+    <link rel="stylesheet" href="blog.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="archives.html">Archives</a></li>
+          <li>
+            <a href="javascript:void(0);" onclick="toggleSearch()">Search</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="search-bar" id="searchBar" style="display: none">
+        <input type="text" placeholder="Search..." />
+      </div>
+    </header>
+
+    <main>
+      <section class="introduction">
+        <h1>Welcome to My Cooking Blog</h1>
+        <p>Explore delicious recipes and cooking tips from my kitchen.</p>
+      </section>
+
+      <section class="featured-posts">
+        <h2>Featured Posts</h2>
+        <div class="posts">
+          <!-- Placeholder for featured posts -->
+          <article>
+            <h3><a href="post.html">How to Make the Perfect Pasta</a></h3>
+            <p>A step-by-step guide to making pasta from scratch.</p>
+            <time datetime="2024-09-02">September 2, 2024</time>
+          </article>
+          <!-- Add more articles as needed -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Cooking Blog. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
