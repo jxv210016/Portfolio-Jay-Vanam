@@ -68,13 +68,13 @@
             src="./assets/linkedin.png"
             alt="My linkedIn Profile"
             class="icon"
-            onclick="location.href='https://www.linkedin.com/in/jay-vanam/'"
+            onclick="window.open('https://www.linkedin.com/in/jay-vanam/', '_blank')"
           />
           <img
             src="./assets/github.png"
             alt="My Github Profile"
             class="icon"
-            onclick="location.href='https://github.com/jxv210016'"
+            onclick="window.open('https://github.com/jxv210016', '_blank')"
           />
         </div>
       </div>
@@ -422,11 +422,23 @@
       <div class="modal-content">
         <span class="close" onclick="closeModal('modal-trend')">&times;</span>
         <h2>Trendalytics</h2>
-        <p>
-          Trendalytics is a project focused on analyzing fashion trends using
-          real-time data from social media. The tool leverages advanced machine
-          learning techniques to provide predictive insights for brands.
-        </p>
+        <div class="project-description">
+          <ul>
+            <li>CSS, JavaScript, Python</li>
+            <li>
+              Sentiment analysis web application that interprets public
+              sentiment towards companies from media to predict earnings
+            </li>
+            <li>
+              Developed frontend with React ensuring intuitive UI while backend
+              utilized Flask and adeptly managed API functions
+            </li>
+            <li>
+              Displayed effective teamwork working in a group of four designing
+              and deploying the application within 24 hours
+            </li>
+          </ul>
+        </div>
         <img
           src="./assets/Trendalytics.png"
           alt="Screenshot of Trendalytics project"
@@ -435,13 +447,13 @@
         <div class="btn-container">
           <button
             class="btn btn-color-2 project-btn"
-            onclick="location.href='https://github.com/jxv210016/Trendalytics'"
+            onclick="window.open('https://github.com/jxv210016/Trendalytics', '_blank')"
           >
             Github
           </button>
           <button
             class="btn btn-color-2 project-btn"
-            onclick="location.href='https://www.youtube.com/watch?v=keIBs8Ej2Y8'"
+            onclick="window.open('https://www.youtube.com/watch?v=keIBs8Ej2Y8', '_blank')"
           >
             Demo
           </button>
@@ -454,11 +466,25 @@
       <div class="modal-content">
         <span class="close" onclick="closeModal('modal-entry')">&times;</span>
         <h2>Entry Wizard</h2>
-        <p>
-          Entry Wizard simplifies data entry for administrative tasks. It
-          automates validation, improves accuracy, and integrates seamlessly
-          with existing database systems.
-        </p>
+        <div class="project-description">
+          <ul>
+            <li>Python, Discord API, Selenium, Pyautogui</li>
+            <li>
+              Built a Discord bot to automate entry submissions on Underdog
+              Fantasy and PrizePicks, significantly enhancing operational
+              efficiency through precise element interactions and reducing
+              manual input time for the user
+            </li>
+            <li>
+              Optimized bot interactions to achieve a rapid submission times(~30
+              seconds), increasing speed by 75%
+            </li>
+            <li>
+              Attained 2000% monthly returns by automating over 100 daily
+              submissions, greatly reducing manual interventio
+            </li>
+          </ul>
+        </div>
         <img
           src="./assets/EntryWizard.png"
           alt="Screenshot of Entry Wizard project"
@@ -467,13 +493,13 @@
         <div class="btn-container">
           <button
             class="btn btn-color-2 project-btn"
-            onclick="location.href='https://github.com/jxv210016/EntryWizard'"
+            onclick="window.open('https://github.com/jxv210016/EntryWizard', '_blank')"
           >
             Github
           </button>
           <button
             class="btn btn-color-2 project-btn"
-            onclick="location.href='https://youtu.be/5iuDD4GAuj0'"
+            onclick="window.open('https://youtu.be/5iuDD4GAuj0', '_blank')"
           >
             Demo
           </button>
@@ -486,11 +512,23 @@
       <div class="modal-content">
         <span class="close" onclick="closeModal('modal-git')">&times;</span>
         <h2>GitReviews</h2>
-        <p>
-          GitReviews allows developers to review pull requests more efficiently.
-          This project integrates with GitHub APIs to analyze and provide
-          comments on code quality and style automatically.
-        </p>
+        <div class="project-description">
+          <ul>
+            <li>Python, Discord API, Selenium, Pyautogui</li>
+            <li>
+              Developed Django web application to process user requests and
+              return movie review sentiment analysis
+            </li>
+            <li>
+              Used libraries such as BeautifulSoup and TextBlob to scrape from
+              Rotten Tomatoes for sentiment analysis on reviews
+            </li>
+            <li>
+              Allowed users to input movie title sending a POST request to
+              backend returning a JSON response displaying the result
+            </li>
+          </ul>
+        </div>
         <img
           src="./assets/GitReviews.png"
           alt="Screenshot of GitReviews project"
@@ -499,13 +537,13 @@
         <div class="btn-container">
           <button
             class="btn btn-color-2 project-btn"
-            onclick="location.href='https://github.com/risheelg01/GitReviews'"
+            onclick="window.open('https://github.com/risheelg01/GitReviews', '_blank')"
           >
             Github
           </button>
           <button
             class="btn btn-color-2 project-btn"
-            onclick="location.href='https://youtu.be/SydE4xkuQLI'"
+            onclick="window.open('https://youtu.be/SydE4xkuQLI', '_blank')"
           >
             Demo
           </button>
@@ -535,7 +573,9 @@
             class="icon contact-icon"
           />
           <p>
-            <a href="https://www.linkedin.com/in/jay-vanam/">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/jay-vanam/" target="_blank"
+              >LinkedIn</a
+            >
           </p>
         </div>
       </div>

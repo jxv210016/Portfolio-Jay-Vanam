@@ -563,6 +563,11 @@ article .icon {
   border-color: rgb(163, 163, 163);
 }
 
+.project-description {
+  margin: 2rem;
+  text-align: left;
+}
+
 /* Media */
 #media {
   position: relative;
