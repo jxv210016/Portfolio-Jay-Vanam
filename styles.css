@@ -160,7 +160,6 @@ a:hover {
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: white;
   width: fit-content;
   max-height: 0;
   overflow: hidden;
@@ -316,6 +315,28 @@ section {
     hide-caret 0s linear 4s forwards;
 }
 
+/* Central Downward Arrow in Profile Section */
+.central-arrow {
+  position: absolute;
+  bottom: 2rem; /* Adjusts how far from the bottom the arrow is */
+  left: 50%;
+  transform: translateX(-50%); /* Centers the arrow horizontally */
+  height: 3rem;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.central-arrow:hover {
+  opacity: 1; /* Fully visible on hover */
+  transform: translateX(-50%) translateY(5px); /* Adds a slight bounce on hover */
+}
+
+/* Adjust positioning to ensure it's within the profile section */
+#profile {
+  position: relative; /* Make the profile section a positioning context for the arrow */
+}
+
 /* ICONS */
 
 .icon {
@@ -400,7 +421,15 @@ section {
 .arrow {
   position: absolute;
   right: -5rem;
+  height: 3rem;
   bottom: 2.5rem;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.arrow:hover {
+  opacity: 1;
+  transform: translateY(-5px); /* Vertical bounce upwards */
 }
 
 .details-container {
@@ -410,6 +439,12 @@ section {
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
   text-align: center;
+  background-color: #d7d7d7;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.details-container:hover {
+  transform: translateY(-5px); /* Slight hover effect */
 }
 
 .section-container {
@@ -427,6 +462,8 @@ section {
 
 #experience {
   position: relative;
+  padding-bottom: 4rem;
+  margin-bottom: 10rem;
 }
 
 .experience-sub-title {
@@ -435,40 +472,43 @@ section {
   font-size: 1.75rem;
 }
 
-.work-container {
-  padding: 1.5rem;
-  flex: 1;
-
-  border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
-  text-align: center;
-}
-
-.work-company {
-  color: rgb(85, 85, 85);
-  font-weight: 600;
-  font-size: 1.75rem;
-}
-
-.work-position {
-  color: rgb(55, 55, 55);
-  font-weight: 600;
-  font-size: 1.25rem;
-}
-
-.work-article-container {
-  margin-top: 1rem;
+/* Internship Experience */
+.internship-container {
   display: flex;
-  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 2rem;
 }
 
-.work-article-container article {
-  font-size: 1rem; /* Set an appropriate font size */
-  line-height: 1.6;
-  max-width: 800px;
-  width: 100%;
+.internship-box {
+  flex: 1 1 calc(50% - 2rem);
+  border: 1px solid rgb(163, 163, 163);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  background-color: #d7d7d7;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.internship-box:hover {
+  transform: translateY(-5px); /* Slight hover effect */
+}
+
+.internship-box h2,
+.internship-box h3,
+.internship-box h4 {
+  margin-bottom: 0.5rem;
+}
+
+.internship-box ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
+.internship-box ul li {
+  margin-bottom: 0.5rem;
 }
 
 .experience-details-container {
@@ -530,6 +570,40 @@ article .icon {
 
 /* CONTACT */
 
+/* Nav Links Container */
+.nav-links-container {
+  display: flex;
+  justify-content: flex-end; /* Aligns navigation links to the right */
+  margin-right: 2rem; /* Adjust this to match button's alignment */
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: absolute;
+  bottom: 8rem; /* Distance from the bottom of the page */
+  padding: 0.75rem 1.5rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  right: 2rem;
+}
+
+.back-to-top:hover {
+  opacity: 1;
+  transform: translateY(-5px); /* Adds a slight bounce on hover */
+}
+
+/* Ensures the button stays at the bottom until page end */
+body {
+  position: relative;
+  min-height: 100vh; /* Ensure full page height */
+  padding-bottom: 100px; /* Make room for the button at the bottom */
+}
+
 #contact {
   display: flex;
   justify-content: center;
@@ -575,4 +649,91 @@ footer {
 
 footer p {
   text-align: center;
+}
+
+/* Modal Background Styling */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Initially invisible */
+  transition: opacity 0.3s ease-in-out; /* Transition for the fade effect */
+}
+
+/* Show Modal with transition */
+.modal.show {
+  display: flex;
+  opacity: 1; /* Fully visible */
+}
+
+/* Modal Content Styling */
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transform: translateY(-50px) scale(0.8); /* Start with a smaller, off-screen scale */
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  opacity: 0;
+}
+
+/* Modal content appears (pop-up effect) */
+.modal.show .modal-content {
+  transform: translateY(0) scale(1); /* Slide and scale back to normal size */
+  opacity: 1; /* Fade in */
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  color: #aaa;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.close:hover {
+  color: black;
+}
+
+/* Modal Image Styling */
+.modal-img {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+/* Button container */
+.btn-container {
+  margin-top: 20px;
+}
+
+/* Hide Modal with fade-out and scale down */
+.modal.hide .modal-content {
+  transform: translateY(-50px) scale(0.8); /* Slide back and shrink */
+  opacity: 0; /* Fade out */
+}
+
+/* Fade-out animation for modal */
+.modal.hide {
+  opacity: 0; /* Fade out the background */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Disable background scrolling when modal is open */
+body.modal-open {
+  overflow: hidden;
 }

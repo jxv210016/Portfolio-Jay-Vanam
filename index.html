@@ -80,9 +80,9 @@
       </div>
       <img
         src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#about'"
+        alt="Scroll down arrow"
+        class="central-arrow"
+        onclick="location.href='#about'"
       />
     </section>
     <!-- ------------------about---------------------- -->
@@ -132,6 +132,59 @@
     <section id="experience">
       <p class="section__text__p1">Explore My</p>
       <h1 class="title">Experience</h1>
+      <div class="internship-container">
+        <div class="internship-box">
+          <h2>Epsilon</h2>
+          <h3>Software Engineering Intern</h3>
+          <h4>May 2024 - August 2024</h4>
+          <ul>
+            <li>
+              Collaborated with a cross-functional team of 10 to integrate new
+              features into CORE Audience Builder (CAB) platform, ensuring
+              seamless data flow and user experience improvements through
+              requirements analysis.
+            </li>
+            <li>
+              Led the development and enhancement of API endpoints for the CORE
+              Audience Builder (CAB) platform using Spring Boot and Swagger UI,
+              improving data retrieval by 4% and display accuracy by 10%.
+            </li>
+            <li>
+              Executed over 120-unit tests using the JUnit framework, leading to
+              a 20% reduction in bugs and significantly enhancing code quality
+              and reliability, while coordinating feature deployment to improve
+              platform efficiency by 5%.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="internship-container">
+        <div class="internship-box">
+          <h2>Matilda Cloud</h2>
+          <h3>Software Engineering Intern</h3>
+          <h4>July 2023 - December 2023</h4>
+          <ul>
+            <li>
+              Achieved a 20% increase in user efficiency by collaborating with
+              an 8-member team to refine the Matilda Discover platform through
+              targeted interface optimization, enhancing user functionality and
+              operational effectiveness.
+            </li>
+            <li>
+              Worked alongside product management and development teams to
+              streamline cloud migration assessment processes by conducting
+              detailed quality assessments on scripts, improving migration
+              accuracy by 5%.
+            </li>
+            <li>
+              Enhanced backend development skills by contributing over 1200
+              lines of code in Python, integrating APScheduler, SQLAlchemy, and
+              RESTful API, impacting overall user productivity and operational
+              effectiveness.
+            </li>
+          </ul>
+        </div>
+      </div>
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container">
@@ -289,13 +342,16 @@
     <section id="projects">
       <p class="section__text__p1">Browse My Recent</p>
       <h1 class="title">Projects</h1>
+
+      <!-- Projects List -->
       <div class="experience-details-container">
         <div class="about-containers">
+          <!-- Trendalytics Project -->
           <div class="details-container color-container">
             <div class="article-container">
               <img
                 src="./assets/Trendalytics.png"
-                alt="Project 1"
+                alt="Trendalytics project image"
                 class="project-img"
               />
             </div>
@@ -303,25 +359,19 @@
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/jxv210016/Trendalytics'"
+                onclick="openModal('modal-trend')"
               >
-                Github
-              </button>
-              <button>
-                <button
-                  class="btn btn-color-2 project-btn"
-                  onclick="location.href='https://www.youtube.com/watch?v=keIBs8Ej2Y8'"
-                >
-                  Demo
-                </button>
+                More Details
               </button>
             </div>
           </div>
+
+          <!-- Entry Wizard Project -->
           <div class="details-container color-container">
             <div class="article-container">
               <img
                 src="./assets/EntryWizard.png"
-                alt="Project 1"
+                alt="Entry Wizard project image"
                 class="project-img"
               />
             </div>
@@ -329,25 +379,19 @@
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/jxv210016/EntryWizard'"
+                onclick="openModal('modal-entry')"
               >
-                Github
-              </button>
-              <button>
-                <button
-                  class="btn btn-color-2 project-btn"
-                  onclick="location.href='https://youtu.be/5iuDD4GAuj0'"
-                >
-                  Demo
-                </button>
+                More Details
               </button>
             </div>
           </div>
+
+          <!-- GitReviews Project -->
           <div class="details-container color-container">
             <div class="article-container">
               <img
                 src="./assets/GitReviews.png"
-                alt="Project 1"
+                alt="GitReviews project image"
                 class="project-img"
               />
             </div>
@@ -355,22 +399,16 @@
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/risheelg01/GitReviews'"
+                onclick="openModal('modal-git')"
               >
-                Github
-              </button>
-              <button>
-                <button
-                  class="btn btn-color-2 project-btn"
-                  onclick="location.href='https://youtu.be/SydE4xkuQLI'"
-                >
-                  Demo
-                </button>
+                More Details
               </button>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- Back to Contact Section Arrow -->
       <img
         src="./assets/arrow.png"
         alt="Arrow icon"
@@ -378,6 +416,103 @@
         onclick="location.href='./#contact'"
       />
     </section>
+
+    <!-- Modal for Trendalytics -->
+    <div id="modal-trend" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modal-trend')">&times;</span>
+        <h2>Trendalytics</h2>
+        <p>
+          Trendalytics is a project focused on analyzing fashion trends using
+          real-time data from social media. The tool leverages advanced machine
+          learning techniques to provide predictive insights for brands.
+        </p>
+        <img
+          src="./assets/Trendalytics.png"
+          alt="Screenshot of Trendalytics project"
+          class="modal-img"
+        />
+        <div class="btn-container">
+          <button
+            class="btn btn-color-2 project-btn"
+            onclick="location.href='https://github.com/jxv210016/Trendalytics'"
+          >
+            Github
+          </button>
+          <button
+            class="btn btn-color-2 project-btn"
+            onclick="location.href='https://www.youtube.com/watch?v=keIBs8Ej2Y8'"
+          >
+            Demo
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for Entry Wizard -->
+    <div id="modal-entry" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modal-entry')">&times;</span>
+        <h2>Entry Wizard</h2>
+        <p>
+          Entry Wizard simplifies data entry for administrative tasks. It
+          automates validation, improves accuracy, and integrates seamlessly
+          with existing database systems.
+        </p>
+        <img
+          src="./assets/EntryWizard.png"
+          alt="Screenshot of Entry Wizard project"
+          class="modal-img"
+        />
+        <div class="btn-container">
+          <button
+            class="btn btn-color-2 project-btn"
+            onclick="location.href='https://github.com/jxv210016/EntryWizard'"
+          >
+            Github
+          </button>
+          <button
+            class="btn btn-color-2 project-btn"
+            onclick="location.href='https://youtu.be/5iuDD4GAuj0'"
+          >
+            Demo
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for GitReviews -->
+    <div id="modal-git" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modal-git')">&times;</span>
+        <h2>GitReviews</h2>
+        <p>
+          GitReviews allows developers to review pull requests more efficiently.
+          This project integrates with GitHub APIs to analyze and provide
+          comments on code quality and style automatically.
+        </p>
+        <img
+          src="./assets/GitReviews.png"
+          alt="Screenshot of GitReviews project"
+          class="modal-img"
+        />
+        <div class="btn-container">
+          <button
+            class="btn btn-color-2 project-btn"
+            onclick="location.href='https://github.com/risheelg01/GitReviews'"
+          >
+            Github
+          </button>
+          <button
+            class="btn btn-color-2 project-btn"
+            onclick="location.href='https://youtu.be/SydE4xkuQLI'"
+          >
+            Demo
+          </button>
+        </div>
+      </div>
+    </div>
+
     <!-- ------------------contact---------------------- -->
     <section id="contact">
       <p class="section__text__p1">Get in Touch</p>
@@ -418,6 +553,10 @@
           </ul>
         </div>
       </nav>
+      <!-- Back to Top Button -->
+      <button id="backToTop" class="back-to-top" onclick="scrollToTop()">
+        Top
+      </button>
       <p>Copyright &#169; 2024 Jay Vanam. All Rights Reserved.</p>
     </footer>
     <script src="script.js"></script>
